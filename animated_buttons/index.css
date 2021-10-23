@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body, .btn{
+    background-color: black;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    padding: 1em 2em;
+    margin: 1em;
+    min-width: 150px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    animation-duration: 1s;
+}
+.btn-back{
+    border: 2px solid hotpink;
+    color: hotpink;
+}
+.btn-back:hover, .btn-back:focus{
+    animation-name: back-animation;
+    animation-duration: 1s;
+    animation-direction: reverse;
+    /* animation-fill-mode: backwards; */
+}
+@keyframes back-animation{
+    100% {box-shadow: inset 8em 0 0 0 hotpink;
+        color: black;}
+}
+
+.btn-refresh{
+    border: 2px solid orange;
+    color: orange;
+}
+.btn-refresh:hover, .btn-refresh:focus{
+    animation-name: refresh-animation;
+    animation-duration: 0.3s;
+    /* animation-fill-mode: forwards; */
+}
+
+@keyframes refresh-animation{
+    100% {box-shadow: 0 0 0 0.75em orange;
+        color: black;}
+}
+.btn-next{
+    border: 2px solid greenyellow;
+    color: greenyellow;
+}
+.btn-next:hover, .btn-next:focus{
+    animation-name: next-animation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+   
+}
+@keyframes next-animation{
+    100% {box-shadow: inset 8em 0 0 0 greenyellow;
+        color: black;}
+}
+.shake{
+    animation-name: shake !important;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+}
+@keyframes shake{
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
